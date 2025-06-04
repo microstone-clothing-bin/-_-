@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>네이버 지도 API 연결</title>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=7j2slzpaws"></script>
+  <body>
+    <div id="map" style="width:100%;height:800px;"></div>   <!-- 지도를 삽입할 DOM 요소 : "map" -->
+
+    <script>
+      var map = new naver.maps.Map('map', {      // Map 클래스 : 지정한 DOM 요소에 지도를 삽입 - Map(지도를 삽입할 HTML 요소/ HTML 요소의 id, 지도의 옵션 객체)
+          center: new naver.maps.LatLng(37.709538, 127.046644),
+          // center : 지도의 초기 중심 좌표
+          // LatLng 클래스 : 위/경도 좌표 정의 (lat: 위도, lng: 경도)
+          zoom: 15  // 지도의 초기 줌 레벨
+      });
+
+
+      var marker = new naver.maps.Marker({
+          position: new naver.maps.LatLng(37.709538, 127.046644),
+          map: map});
+    </script>
+  </body>
+</html>
